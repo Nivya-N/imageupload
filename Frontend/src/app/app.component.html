@@ -1,0 +1,34 @@
+<h1 style="text-align: center">Fun Of Heuristic File Uploader</h1>
+
+<div style="text-align: center">
+  <form enctype="multipart/form-data">      
+    <div>
+      <input type="file" name="image" (change)="selectImage($event)" />
+    </div>
+    <br>
+    <div>
+      <button type="submit" (click)="onSubmit()">Upload</button>
+    </div>
+  </form>
+</div>
+
+<hr>
+<h2 style="text-align: center">Multiple</h2>
+<div style="text-align: center">
+  <form>      
+    <!-- <div>
+      <input type="file" name="images" multiple (change)="selectMultipleImage($event)" />
+    </div>
+    <br>
+    <div>
+      <button type="submit" (click)="onMultipleSubmit()">Multiple Upload</button>
+    </div> -->
+  </form>
+</div>
+<!-- ======================================================= -->
+<div>
+  IMAGE DISPLAY <br>
+  {{image[1].path}}
+  <img src="{{image[1].path}}" alt="{{image[1].filename}}">
+  
+</div>
