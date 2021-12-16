@@ -27,7 +27,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.imagesService.getImages().subscribe((data)=>{
       this.image=JSON.parse(JSON.stringify(data));
-      console.log(this.image[1]);
+      console.log(this.image);
   })
 
   }

@@ -4,7 +4,7 @@ const express = require('express'),
   multer = require('multer'),
   bodyParser = require('body-parser');
   const mongoose = require('mongoose')
-const { callbackify } = require('util');
+//const { callbackify } = require('../Frontend/src/app/uploads');
 require("dotenv").config();
 // const connection = require('./models/imagemodel')
 // connection();
@@ -19,7 +19,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use('/uploads',express.static('Backend/uploads'));
+//app.use('/uploads',express.static('Backend/uploads'));
 
 app.listen(3000,()=>{
     console.log("The server started on port 3000");
@@ -27,7 +27,7 @@ app.listen(3000,()=>{
 
 const storage = multer.diskStorage({
     destination:(req,file,callback)=>{
-        callback(null,'uploads')
+        callback(null,'../Frontend/src/uploads')
     },
     filename:(req,file,callback)=>{
         callback(null,file.originalname)
